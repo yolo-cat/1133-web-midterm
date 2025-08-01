@@ -1,0 +1,74 @@
+/* d1397056.css 初版 */
+
+/* Reset */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* 容器置中 */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* 標題 */
+h1#title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* 倒數顯示 */
+#display {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* 控制區塊 */
+.controls {
+    margin-bottom: 1.5rem;
+}
+.controls label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+.controls input[type="datetime-local"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* 按鈕區塊 */
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+.buttons button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.2s;
+}
+.buttons button:hover {
+    background-color: #0056b3;
+}
+.buttons button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
