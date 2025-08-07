@@ -13,3 +13,27 @@ buttons.forEach(btn => {
         });
     });
 });
+
+// 圖片 hover 計時功能
+const galleryItems = document.querySelectorAll('.gallery li');
+galleryItems.forEach(li => {
+    const timerSpan = li.querySelector('.hover-timer');
+    let timer = null;
+    let startTime = 0;
+    let rafId = null;
+
+    function updateTimer() {
+        const elapsed = ((performance.now() - startTime) / 1000).toFixed(1);
+        timerSpan.textContent = `${elapsed}s`;
+        rafId = requestAnimationFrame(updateTimer);
+    }
+
+    li.addEventListener('mouseenter', () => {
+        startTime = performance.now();
+        timerSpan.textContent = '0.0s';
+        rafId = requestAnimationFrame(updateTimer);
+    });
+    li.addEventListener('mouseleave', () => {
+        cancelAnimationFrame(rafId);
+    });
+});
